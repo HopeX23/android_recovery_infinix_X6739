@@ -20,17 +20,27 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.0-impl \
-    android.hardware.boot@1.0-service
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-service \
+    android.hardware.boot@1.2-mtkimpl.recovery
 
 PRODUCT_PACKAGES += \
     bootctrl.mt6893
+    bootctrl.mt6893.recovery
 
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.mt6893 \
-    libgptutils \
-    libz \
-    libcutils
+PRODUCT_PACKAGES_DEBUG += \
+    bootctrl \
+    update_engine_client
+
+# fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
+
+# Health HAL
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service
 
 PRODUCT_PACKAGES += \
     otapreopt_script \
