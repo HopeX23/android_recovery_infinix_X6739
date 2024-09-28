@@ -1,5 +1,5 @@
+import /init.recovery.trustonic.rc
 import /init.recovery.project.rc
-import /init.recovery.usb.rc
 
 on init
     setprop sys.usb.configfs 1
@@ -10,6 +10,7 @@ on init
 on boot
     start boot-hal-1-2
     start health-hal-2-1
+    setprop sys.usb.controller "11201000.usb0"
 
 on post-fs
     # Support A/B feature for EMMC and UFS boot region
@@ -27,10 +28,66 @@ on post-fs
     exec u:r:update_engine:s0 root root -- /system/bin/mtk_plpath_utils
     start mtk.plpath.utils.link
 
-service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
-    class main
-    user root
-    group root system
-    disabled
+on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
+    install_keyring
+
+service keystore_auth /system/bin/keystore_auth
     oneshot
+    user system
+    group root
+    disabled
     seclabel u:r:recovery:s0
+
+service keystore /system/bin/keystore /tmp/misc/keystore
+    user root
+    group root drmrpc readproc
+    disabled
+    seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /vendor/bin/hw/android.hardware.gatekeeper@1.0-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service keymaster-4-1 /vendor/bin/hw/android.hardware.keymaster@4.1-service.trustonic
+    user root
+    group root drmrpc
+    disabled
+    seclabel u:r:recovery:s0
+
+service tee-1-1 /vendor/bin/hw/vendor.trustonic.tee@1.1-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+on property:vendor.sys.listener.registered=true
+    start mobicore
+    start gatekeeper-1-0
+    start keymaster-4-1
+    start tee-1-1
+   
+on property:hwservicemanager.ready=true
+    start mobicore
+    start keymaster-4-1
+    start gatekeeper-1-0
+    start tee-1-1
+
+on property:ro.crypto.state=unsupported
+    stop mobicore
+    stop keymaster-4-1
+    stop gatekeeper-1-0
+    stop tee-1-1
+
+on property:ro.crypto.state=unencrypted
+    stop mobicore
+    stop keymaster-4-1
+    stop gatekeeper-1-0
+    stop tee-1-1
+        
+on property:twrp.all.users.decrypted=true
+    stop mobicore
+    stop keymaster-4-1
+    stop gatekeeper-1-0
+    stop tee-1-1
