@@ -64,5 +64,9 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libion.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
 
+# Copy patched touch screen driver module
+PRODUCT_COPY_FILES += \
+   $(LOCAL_PATH)/touch/transsion_touch_patched.ko:recovery/root/lib/modules/transsion_touch.ko
+
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
