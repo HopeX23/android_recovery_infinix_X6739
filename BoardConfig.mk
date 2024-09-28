@@ -116,6 +116,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 TARGET_VENDOR_PROP := $(DEVICE_PATH)/vendor.prop
 
+# Metadata
+BOARD_USES_METADATA_PARTITION := true
+
 # Recovery - Ramdisk
 BOARD_RAMDISK_USE_LZ4 := true
 
@@ -148,6 +151,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
+
+# Recovery - sdcard ?
+RECOVERY_SDCARD_ON_DATA := true
 
 # TWRP Configuration
 TW_THEME := portrait_hdpi
