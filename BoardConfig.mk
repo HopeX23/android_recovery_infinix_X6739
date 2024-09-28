@@ -72,6 +72,7 @@ TARGET_KERNEL_CONFIG := zenith_defconfig
 TARGET_KERNEL_SOURCE := kernel/infinix/zenith
 
 # Kernel
+BOARD_BOOT_HEADER_VERSION := 3
 TARGET_NO_KERNEL := true
 BOARD_KERNEL_IMAGE_NAME := Image
 
