@@ -68,5 +68,8 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/touch/transsion_touch_patched.ko:recovery/root/lib/modules/transsion_touch.ko
 
+# API
+PRODUCT_SHIPPING_API_LEVEL := 31
+
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
