@@ -1,14 +1,21 @@
 import /init.recovery.trustonic.rc
 import /init.recovery.project.rc
 
+# Set SELinux to Permissive
+on early-init
+    write /sys/fs/selinux/enforce 0
+
 on init
     setprop sys.usb.configfs 1
     setprop sys.usb.ffs.aio_compat 1
     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw:/system/lib64/hw
     mkdir /mnt/vendor/persist 0771 system system
 
-on boot
+on init
     start boot-hal-1-2
+
+on init
+    wait /sys/class/power_supply/battery
     start health-hal-2-1
     setprop sys.usb.controller "11201000.usb0"
 
