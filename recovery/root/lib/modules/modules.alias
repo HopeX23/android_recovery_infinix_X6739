@@ -128,6 +128,8 @@ alias of:N*T*Cmediatek,mt6359p-battery_oc_throttling mtk_battery_oc_throttling
 alias of:N*T*Cmediatek,mt6359p-battery_oc_throttlingC* mtk_battery_oc_throttling
 alias of:N*T*Cmediatek,mt6375-battery_oc_throttling mtk_battery_oc_throttling
 alias of:N*T*Cmediatek,mt6375-battery_oc_throttlingC* mtk_battery_oc_throttling
+alias of:N*T*Cwireless_ta wireless_ta
+alias of:N*T*Cwireless_taC* wireless_ta
 alias of:N*T*Cmediatek,mt8173-mtu3 mtu3
 alias of:N*T*Cmediatek,mt8173-mtu3C* mtu3
 alias of:N*T*Cmediatek,mtu3 mtu3
@@ -271,6 +273,12 @@ alias of:N*T*Cmediatek,mt6373 mtk_spmi_pmic
 alias of:N*T*Cmediatek,mt6373C* mtk_spmi_pmic
 alias of:N*T*Cmediatek,scpsys-disable-unused mtk_pm_domain_disable_unused
 alias of:N*T*Cmediatek,scpsys-disable-unusedC* mtk_pm_domain_disable_unused
+alias of:N*T*Chalo,hl7227 hl7227
+alias of:N*T*Chalo,hl7227C* hl7227
+alias i2c:hl7227 hl7227
+alias i2c:mt5728 wireless_mt5728
+alias of:N*T*Cmediatek,mt5728 wireless_mt5728
+alias of:N*T*Cmediatek,mt5728C* wireless_mt5728
 alias of:N*T*Cmediatek,pbm mtk_pbm
 alias of:N*T*Cmediatek,pbmC* mtk_pbm
 alias of:N*T*Cmediatek,disp-leds leds_mtk_disp
@@ -333,8 +341,6 @@ alias of:N*T*Cmediatek,mt6779-uart-dma mtk_uart_apdma
 alias of:N*T*Cmediatek,mt6779-uart-dmaC* mtk_uart_apdma
 alias of:N*T*Cmediatek,mt6765-cqdma mtk_cqdma
 alias of:N*T*Cmediatek,mt6765-cqdmaC* mtk_cqdma
-alias of:N*T*Cmediatek,charger,pe mtk_pep
-alias of:N*T*Cmediatek,charger,peC* mtk_pep
 alias platform:mt6359p-regulator mt6359p_regulator
 alias of:N*T*Cst,st21nfc st21nfc
 alias of:N*T*Cst,st21nfcC* st21nfc
@@ -826,10 +832,6 @@ alias of:N*T*Cmediatek,pd_adapterC* mtk_pd_adapter
 alias of:N*T*Cmediatek,gpufreq mtk_gpufreq_mt6893
 alias of:N*T*Cmediatek,gpufreqC* mtk_gpufreq_mt6893
 alias net-pf-16-proto-16-family-nl80211 cfg80211
-alias of:N*T*Ctran,chg_aging tran_battery_aging
-alias of:N*T*Ctran,chg_agingC* tran_battery_aging
-alias of:N*T*Cmediatek,charger,pe4 mtk_pep40
-alias of:N*T*Cmediatek,charger,pe4C* mtk_pep40
 alias of:N*T*Cmediatek,mt6360_chg mt6360_pmu_chg
 alias of:N*T*Cmediatek,mt6360_chgC* mt6360_pmu_chg
 alias platform:mt6360_pmu_chg mt6360_pmu_chg
@@ -1036,6 +1038,7 @@ alias of:N*T*Cmediatek,mt6761-dvfsrcC* mtk_emi
 alias i2c:ps5169 ps5169
 alias of:N*T*Cparade,ps5169 ps5169
 alias of:N*T*Cparade,ps5169C* ps5169
+alias i2c:haptic_nv aw862xx_haptic
 alias of:N*T*Cmediatek,mt6357-auxadc mt635x_auxadc
 alias of:N*T*Cmediatek,mt6357-auxadcC* mt635x_auxadc
 alias of:N*T*Cmediatek,mt6358-auxadc mt635x_auxadc
