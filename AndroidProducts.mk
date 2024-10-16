@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_zenith.mk
+    $(LOCAL_DIR)/twrp_X6739.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_zenith-user \
-    twrp_zenith-userdebug \
-    twrp_zenith-eng
+    twrp_X6739-user \
+    twrp_X6739-userdebug \
+    twrp_X6739-eng

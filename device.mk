@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-LOCAL_PATH := device/infinix/zenith
+LOCAL_PATH := device/infinix/X6739
 
 # Virtual A/B
 ENABLE_VIRTUAL_AB := true

@@ -19,10 +19,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from Infinix-X6739 device
-$(call inherit-product, device/infinix/zenith/device.mk)
+$(call inherit-product, device/infinix/X6739/device.mk)
 
-PRODUCT_DEVICE := zenith
-PRODUCT_NAME := twrp_zenith
+PRODUCT_DEVICE := X6739
+PRODUCT_NAME := twrp_X6739
 PRODUCT_BRAND := Infinix
 PRODUCT_MODEL := Infinix X6739
 PRODUCT_MANUFACTURER := infinix

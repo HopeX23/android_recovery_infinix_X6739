@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/infinix/zenith
+DEVICE_PATH := device/infinix/X6739
 
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
@@ -38,10 +38,10 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := zenith
+TARGET_OTA_ASSERT_DEVICE := X6739
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := zenith
+TARGET_BOOTLOADER_BOARD_NAME := Infinix-X6739
 TARGET_NO_BOOTLOADER := true
 
 # Build Rules
@@ -78,7 +78,7 @@ BOARD_KERNEL_IMAGE_NAME := Image
 
 # Kernel - source
 TARGET_KERNEL_CONFIG := zenith_defconfig
-TARGET_KERNEL_SOURCE := kernel/infinix/zenith
+TARGET_KERNEL_SOURCE := kernel/infinix/X6739
 
 # Build Rules
 BUILD_BROKEN_DUP_RULES := true
@@ -191,4 +191,4 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
 # TWRP Configs
-TW_DEVICE_VERSION := X6739-HopeX23
+TW_DEVICE_VERSION := X6739_HopeX23-02
